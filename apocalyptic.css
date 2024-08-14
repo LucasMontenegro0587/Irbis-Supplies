@@ -1,0 +1,229 @@
+/* Estilos básicos para el HTML y la tabla - ¿Debería aplicar Media Query? */
+body {
+  font-family: 'Times New Roman', Times, serif;
+  margin: 0;
+  padding: 0;
+  background-image: url('/imágenes e-commerce/OTWD - Background Tunnel.jpg');
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+header {
+  display: flex; /* Usa flexbox para alinear el logo y el título */
+  flex-direction: column; /* Coloca el logo y el título en una columna */
+  align-items: center; /* Centra los elementos horizontalmente */
+  color: #fff;
+  padding: 1rem;
+  position: relative; /* Permite posicionar el carrito en relación al header */
+}
+
+/* Logo */
+.logo {
+  width: 200px; /* Ajusta el tamaño del logo */
+  height: auto; /* Mantiene la proporción del logo */
+  margin-top: 10px; /* Espacio entre el logo y el título */
+}
+
+.header-title {
+  font-size: 50px; /* Tamaño del título */
+  color: rgb(255, 145, 0); /* Color del título */
+  text-align: center; /* Centra el texto */
+}
+
+/* Estilo para el carrito de compras */
+#cart {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 300px;
+  height: 100%;
+  background: white;
+  border-left: 2px solid #333;
+  box-shadow: -2px 0 5px rgba(0,0,0,0.5);
+  padding: 10px;
+  overflow-y: auto;
+  display: none; /* Ocultar por defecto */
+}
+#cart h2 {
+  margin-top: 0;
+}
+#cart .item {
+  margin-bottom: 10px;
+}
+#cart .item img {
+  max-width: 50px;
+  vertical-align: middle;
+  margin-right: 10px;
+}
+#cart .item p {
+  display: inline-block;
+  vertical-align: middle;
+}
+#cart .item button {
+  background: red;
+  color: white;
+  border: none;
+  padding: 5px;
+  cursor: pointer;
+}
+
+main {
+  padding: 2rem;
+}
+
+table {
+  width: 100%;
+  border-collapse: none;
+}
+
+td {
+  padding: 1rem;
+  border: 1px solid #ddd;
+  text-align: center;
+}
+
+img {
+  width: 250px; /* Establecer un tamaño fijo para las imágenes */
+  height: auto; /* Mantiene la proporción */
+}
+
+.grupo-de-cuatro {
+  width: auto;
+  height: auto;
+}
+
+.product {
+  background-color: #ffffff8c;
+  border-radius: 78px;
+  overflow: hidden;
+  text-align: center; /* Alinea el texto en el centro */
+}
+
+.product p {
+  margin: 0;
+  padding: 0.5rem;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-size: 15px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+/* Animación para las imágenes de los productos */
+.product img {
+  width: 278px;
+  height: auto;
+  transition: transform 0.1s ease; /* Transición suave para la animación */
+}
+
+.product:hover img {
+  transform: scale(1.1); /* Escala la imagen al 110% al pasar el mouse */
+}
+
+/* Botón selector de colores */
+.colors {
+  display: flex;
+  justify-content: center;
+  margin: 0.5rem 0;
+}
+
+.color {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  margin: 0 5px;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.color-button {
+  width: 30px;
+  height: 30px;
+  border: 1px solid #ccc;
+  border-radius: 50%;
+  margin: 0 5px;
+  background-color: transparent;
+  cursor: pointer;
+  transition: border-color 0.3s;
+}
+
+.color-button.selected {
+  border-color: #000;
+}
+
+.color-button:hover {
+  border-color: #000;
+}
+
+/* Botón de compra */
+.buy-button {
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: bolder;
+  background-color: black;
+  color: #ffffff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s;
+  margin-top: 10px; /* Espacio entre el texto del producto y el botón */
+}
+
+.buy-button:hover {
+  background-color: rgb(82, 136, 1);
+}
+
+/* Botones de acceso y [+] */
+.button-container {
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.button-container button {
+  padding: 15px 30px;
+  font-size: 25px; /* Tamaño del texto del botón */
+  background-color: #0004ff;
+  color: #fff;
+  border: black;
+  border-radius: 100px;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s;
+}
+
+.button-container button:hover {
+  background-color: #00b300;
+}
+
+.button-container p {
+  font-size: 2rem;
+  color: orange;
+  margin: 1rem 0;
+}
+
+#catalogo {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+  overflow: auto;
+}
+
+#catalogo-content {
+  background: #fff;
+  margin: 50px auto;
+  padding: 20px;
+  width: 80%;
+  max-width: 600px;
+  border-radius: 8px;
+}
+
+.close-btn {
+  float: right;
+  cursor: pointer;
+  font-size: 18px;
+}
