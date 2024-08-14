@@ -35,19 +35,18 @@ let usuarioAccedido = false;
 
 // Función para mostrar los productos
 function mostrarProductos() {
-  let mensaje = "Nuestro catálogo:\n";
-  for (let i = 0; i < productos.length; i++) {
-    let producto = productos[i];
-    mensaje += `${producto.id}. ${producto.nombre} - $${producto.precio}\n`;
-  }
-  return mensaje;
+  let mensaje = "Nuestro catálogo:<br>";
+  productos.forEach(producto => {
+    mensaje += `${producto.id}. ${producto.nombre} - $${producto.precio}<br>`;
+  });
+  document.getElementById('productos').innerHTML = mensaje;
 }
 
 // Función para mostrar los colores disponibles
 function mostrarColores(producto) {
-  let mensaje = `Colores disponibles para ${producto.nombre}:\n`;
+  let mensaje = `Colores disponibles para ${producto.nombre}`;
   producto.colores.forEach((color, index) => {
-    mensaje += `${index + 1}. ${color}\n`;
+    mensaje += `${index + 1}. ${color}<br>`;
   });
   return mensaje;
 }
@@ -78,54 +77,31 @@ function esNumeroCelularValido(valor) {
 
 // Función para manejar la confirmación de la compra
 function manejarConfirmacionCompra(confirmarCompra, producto, color) {
-  switch (confirmarCompra) {
-    case true:
-      alert(`Compra confirmada.\nProducto: ${producto.nombre}\nColor seleccionado: ${color}`);
-      break;
-    case false:
-      alert("La compra ha sido cancelada.");
-      break;
-    default:
-      alert("Opción desconocida.");
+  if (confirmarCompra) {
+    document.getElementById('mensaje-compra').innerHTML = `Compra confirmada.<br>Producto: ${producto.nombre}<br>Color seleccionado: ${color}`;
+  } else {
+    document.getElementById('mensaje-compra').innerHTML = "La compra ha sido cancelada.";
   }
 }
 
 function ingresoDeSolicitud() {
-  let nombre;
-  let apellido;
-  let edad;
+  let nombre = document.getElementById('nombre').value.trim();
+  let apellido = document.getElementById('apellido').value.trim();
+  let edad = document.getElementById('edad').value.trim();
 
-  while (!nombre || !esSoloLetras(nombre.trim())) {
-    nombre = prompt("Ingresá tu nombre completo:");
-    if (nombre === null) {
-      alert("La operación está cancelada. No se ingresaron los datos solicitados.");
-      return;
-    }
-    if (!esSoloLetras(nombre.trim())) {
-      alert("El campo nombre debe contener solo letras y espacios. Por favor, reintentá de nuevo.");
-    }
+  if (!esSoloLetras(nombre)) {
+    alert("El campo nombre debe contener solo letras y espacios. Por favor, reintentá de nuevo.");
+    return;
   }
 
-  while (!apellido || !esSoloLetras(apellido.trim())) {
-    apellido = prompt("Ingresá tu apellido completo:");
-    if (apellido === null) {
-      alert("La operación está cancelada. No se ingresaron los datos solicitados.");
-      return;
-    }
-    if (!esSoloLetras(apellido.trim())) {
-      alert("El campo apellido debe contener solo letras y espacios. Por favor, reintentá de nuevo.");
-    }
+  if (!esSoloLetras(apellido)) {
+    alert("El campo apellido debe contener solo letras y espacios. Por favor, reintentá de nuevo.");
+    return;
   }
 
-  while (!edad || !esEdadValida(edad)) {
-    edad = prompt("Ingresá tu edad:");
-    if (edad === null) {
-      alert("La operación está cancelada. No se ingresaron los datos solicitados.");
-      return;
-    }
-    if (!esEdadValida(edad)) {
-      alert("El campo edad debe ser un número válido. Por favor, reintentá de nuevo.");
-    }
+  if (!esEdadValida(edad)) {
+    alert("El campo edad debe ser un número válido. Por favor, reintentá de nuevo.");
+    return;
   }
 
   const confirmar = confirm(`¿La información suministrada es correcta? Por favor verificá: \nTu nombre: ${nombre}\nTu apellido: ${apellido}\nTu edad: ${edad}`);
@@ -136,8 +112,7 @@ function ingresoDeSolicitud() {
       edad: edad
     };
     datos.push(persona);
-    alert("Datos guardados con éxito.");
-    console.log("Datos actuales:", datos);
+    document.getElementById('datos-guardados').innerHTML = "Datos guardados con éxito.";
 
     // Actualizar el estado de usuarioAccedido
     usuarioAccedido = true;
@@ -169,9 +144,8 @@ function mostrarYComprarProductos() {
     let colorSeleccionado;
 
     do {
-      const productosMensaje = mostrarProductos();
-      const eleccion = prompt(`${productosMensaje}\nIngresá el número del producto:`);
-
+      mostrarProductos();
+      const eleccion = prompt("Ingresá el número del producto:");
       productoSeleccionado = productos.find(p => p.id == eleccion);
       if (!productoSeleccionado) {
         alert("La opción ingresada no es válida. Por favor, reintentá.");
@@ -179,7 +153,8 @@ function mostrarYComprarProductos() {
       }
 
       const coloresMensaje = mostrarColores(productoSeleccionado);
-      const eleccionColor = parseInt(prompt(`${coloresMensaje}\nIngresá el número del color deseado:`), 10);
+      document.getElementById('colores').innerHTML = coloresMensaje;
+      const eleccionColor = parseInt(prompt("Ingresá el número del color deseado:"), 10);
 
       colorSeleccionado = productoSeleccionado.colores[eleccionColor - 1];
       if (!colorSeleccionado) {
@@ -209,12 +184,12 @@ function mostrarYComprarProductos() {
 
     if (continuarCompra) {
       // Se muestra el total acumulado del carrito antes de preguntar si quiere seguir comprando
-      alert(`El total acumulado de tu carrito es de $${totalCarrito}.`);
+      document.getElementById('total-carrito').innerHTML = `El total acumulado de tu carrito es de $${totalCarrito}.`;
       continuarCompra = confirm("¿Deseás comprar algo más?");
     }
   }
 
-  alert(`¡Hasta la próxima! El total de tu compra fue de $${totalCarrito}.`);
+  document.getElementById('total-compra').innerHTML = `¡Hasta la próxima! El total de tu compra fue de $${totalCarrito}.`;
 
   // Solicitar la información de contacto
   let contacto;
@@ -230,7 +205,7 @@ function mostrarYComprarProductos() {
       contacto = null; // Repetición del prompt
     } else {
       alert("Me pondré en contacto lo antes posible.");
-      console.log("Información de contacto proporcionada:", contacto);
+      document.getElementById('contacto').innerHTML = `Información de contacto proporcionada: ${contacto}`;
     }
   }
 }
@@ -241,7 +216,7 @@ function mostrarTotalCarrito() {
     alert("Usuario desconocido. Acceso denegado.");
     return;
   }
-  alert(`El total acumulado de tu carrito es de $${totalCarrito}.`);
+  document.getElementById('total-carrito').innerHTML = `El total acumulado de tu carrito es de $${totalCarrito}.`;
 }
 
 // Asignar el evento click al botón "Mostrar carrito"

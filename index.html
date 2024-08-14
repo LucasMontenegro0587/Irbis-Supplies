@@ -10,7 +10,6 @@
     <header>
         <img src="/imágenes e-commerce/logo tienda.png" alt="Logo-tienda" class="logo">
         <h1 class="header-title">Irbis Supplies</h1>
-        <button style="font-size: 250%; background-color: black;" id="show-cart">🛒</button>
     </header>
     <p style="font-size: 20px; background-color: rgba(0, 0, 0, 0.780); font-weight: bold; text-align: center; color: rgb(255, 255, 0)">¡El último bastión del comercio virtual! Aunque el mundo se desmorona y los muertos caminan, nuestra red eléctrica sigue en pie y el sitio está operativo para abastecerte con lo necesario para todas tus exigencias, ofreciéndote productos en éstos tiempos de incertidumbre y oscuridad.</p>
     <main>
@@ -758,7 +757,20 @@
     <div class="button-container">
         <p style="text-align: center; font-size: 25px;">¡Luchá en solitario o con aliados y... no mueras!</p>
         <br>
+        <input type="text" id="nombre" placeholder="Nombre">
+        <input type="text" id="apellido" placeholder="Apellido">
+        <input type="number" id="edad" placeholder="Edad">
         <button onclick="ingresoDeSolicitud()">Ingresar</button>
+        <div style="background-color: white;" id="datos-guardados"></div> <!-- ARREGLAR -->
+        <div style="background-color: white;" id="productos"></div> <!-- ARREGLAR -->
+        <div style="background-color: white;" id="colores"></div> <!-- ARREGLAR -->
+        <div style="background-color: white;" id="mensaje-compra"></div> <!-- ARREGLAR -->
+        <div style="background-color: white;" id="total-carrito"></div> <!-- ARREGLAR -->
+        <div style="background-color: white;" id="total-compra"></div> <!-- ARREGLAR -->
+        <div style="background-color: white;" id="contacto"></div> <!-- ARREGLAR -->
+        <button style="font-size: 100%; background-color: black;" id="show-cart">🛒</button>
+        <button style="font-size: 100%; background-color: black;" id="clear-cart">Vaciar</button> <!-- ARREGLAR -->
+        <div class="cart-items"></div>
         <br>
         <br>
     </div>

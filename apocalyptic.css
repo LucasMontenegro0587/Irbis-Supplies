@@ -181,11 +181,11 @@ img {
 
 .button-container button {
   padding: 15px 30px;
-  font-size: 25px; /* Tamaño del texto del botón */
+  font-size: 100%; /* Tamaño del texto del botón */
   background-color: #0004ff;
   color: #fff;
   border: black;
-  border-radius: 100px;
+  border-radius: 1000px;
   cursor: pointer;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   transition: background-color 0.3s;
