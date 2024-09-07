@@ -4,26 +4,66 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tienda Post-Apocalíptica</title>
-    <link rel="stylesheet" href="./apocalyptic.css">
+    <link rel="stylesheet" href="/apocalyptic.css">
 </head>
 <body>
     <header>
-        <img src="/imágenes e-commerce/logo-tienda.png" alt="Logo-tienda" class="logo">
+        <img src="e-commerce/logo-tienda.png" alt="logo-tienda" class="logo">
         <h1 class="header-title">Irbis Supplies</h1>
     </header>
-    <p style="font-size: 20px; background-color: rgba(0, 0, 0, 0.780); font-weight: bold; text-align: center; color: rgb(255, 255, 0)">¡El último bastión del comercio virtual! Aunque el mundo se desmorona y los muertos caminan, nuestra red eléctrica sigue en pie y el sitio está operativo para abastecerte con lo necesario para todas tus exigencias, ofreciéndote productos en éstos tiempos de incertidumbre y oscuridad.</p>
+    <p style="font-size: 20px; background-color: rgba(0, 0, 0, 0.780); font-weight: bold; text-align: center; color: rgb(255, 255, 0)"> ¡El último bastión del comercio virtual! Aunque el mundo se desmorona y los muertos caminan, nuestra red eléctrica sigue en pie y el sitio está operativo para abastecerte con lo necesario para todas tus exigencias, ofreciéndote productos en éstos tiempos de incertidumbre y oscuridad.</p>
     <main>
-        <table>
+        <!-- Modal de bienvenida -->
+        <div id="welcome-modal" class="hidden">
+            <h2>¡Bienvenido/a!</h2>
+            <button onclick="document.getElementById('welcome-modal').style.display = 'none'">Cerrar</button>
+        </div>
+        <!-- Formulario para la compra de productos -->
+        <div id="compra-form" class="hidden">
+            <h2>Compra de Productos</h2>
+            <form>
+                <label for="producto-id">Selecciona el producto:</label>
+                <input type="number" id="producto-id" placeholder="ID del producto" min="1">
+                <br>
+                <label for="color-id">Selecciona el color:</label>
+                <input type="number" id="color-id" placeholder="Número del color" min="1">
+                <br>
+                <label for="cantidad">Cantidad:</label>
+                <input type="number" id="cantidad" placeholder="Cantidad" min="1">
+                <br>
+                <button type="submit">Confirmar Compra</button>
+            </form>
+        </div>
+        <div class="button-container">
+            <p style="text-align: center; font-size: 25px;">¡Luchá en solitario o con aliados y... no mueras!</p>
+            <input type="text" id="nombre" placeholder="Nombre">
+            <input type="text" id="apellido" placeholder="Apellido">
+            <input type="number" id="edad" placeholder="Edad">
+            <button onclick="IngresoDeSolicitud()">Ingresar</button>
+            <button style="font-size: 100%; background-color: black;" id="show-cart">🛒</button>
+            <button style="font-size: 100%; background-color: black;" id="clear-cart">Vaciar</button>
+            <div style="background-color: white;" id="datos-guardados"></div>
+            <div style="background-color: white;" id="productos"></div>
+            <div style="background-color: white;" id="colores"></div>
+            <div style="background-color: white;" id="mensaje-compra"></div>
+            <div style="background-color: white;" id="total-carrito"></div>
+            <div style="background-color: white;" id="total-compra"></div>
+            <div style="background-color: white;" id="contacto"></div>
+            <div class="cart-items"></div>
+        </div>            
+        <table id="productos">
             <tr>
                 <td class="product">
-                    <img src="/imágenes e-commerce/Broughton M2000-D.png" alt="rifle-francotirador">
+                    <img src="/e-commerce/producto-uno.png" alt="rifle-francotirador">
                     <p>Broughton M2000-D</p>
                     <div class="colors">
                         <button class="color-button" style="background-color: black;" data-color="black"></button>
                         <button class="color-button" style="background-color: grey;" data-color="gray"></button>
                         <button class="color-button" style="background-color: white;" data-color="white"></button>
-                        <button class="color-button" style="background-color: burlywood;" data-color="lightbrown"></button>
-                        <button class="color-button" style="background-color: mediumpurple;" data-color="mediumpurple"></button>
+                        <button class="color-button" style="background-color: burlywood;"
+                            data-color="lightbrown"></button>
+                        <button class="color-button" style="background-color: mediumpurple;"
+                            data-color="mediumpurple"></button>
                     </div>
                     <div class="color-options">
                         <label class="color-1">
@@ -45,14 +85,16 @@
                     <button class="buy-button">+</button>
                 </td>
                 <td class="product">
-                    <img src="/imágenes e-commerce/Glock 25 Radetec Smart Slide.png" alt="pistola-glock">
+                    <img src="/e-commerce/producto-dos.png" alt="pistola-glock">
                     <p>Glock 25 Radetec Smart Slide</p>
                     <div class="colors">
                         <button class="color-button" style="background-color: black;" data-color="black"></button>
                         <button class="color-button" style="background-color: grey;" data-color="gray"></button>
                         <button class="color-button" style="background-color: white;" data-color="white"></button>
-                        <button class="color-button" style="background-color: rgb(255, 166, 0);" data-color="orange"></button>
-                        <button class="color-button" style="background-color: rgb(29, 14, 5);" data-color="darkbrown"></button>
+                        <button class="color-button" style="background-color: rgb(255, 166, 0);"
+                            data-color="orange"></button>
+                        <button class="color-button" style="background-color: rgb(29, 14, 5);"
+                            data-color="darkbrown"></button>
                     </div>
                     <div class="color-options">
                         <label class="color-1">
@@ -74,14 +116,16 @@
                     <button class="buy-button">+</button>
                 </td>
                 <td class="product">
-                    <img src="/imágenes e-commerce/FN P90.png" alt="p-90">
+                    <img src="/e-commerce/producto-tres.png" alt="p-90">
                     <p>FN P90 + accesorios</p>
                     <div class="colors">
                         <button class="color-button" style="background-color: black;" data-color="black"></button>
                         <button class="color-button" style="background-color: grey;" data-color="gray"></button>
                         <button class="color-button" style="background-color: white;" data-color="white"></button>
-                        <button class="color-button" style="background-color: turquoise;" data-color="turquoise"></button>
-                        <button class="color-button" style="background-color: rgb(255, 168, 243);" data-color="pink"></button>
+                        <button class="color-button" style="background-color: turquoise;"
+                            data-color="turquoise"></button>
+                        <button class="color-button" style="background-color: rgb(255, 168, 243);"
+                            data-color="pink"></button>
                     </div>
                     <div class="color-options">
                         <label class="color-1">
@@ -103,14 +147,16 @@
                     <button class="buy-button">+</button>
                 </td>
                 <td class="product">
-                    <img src="/imágenes e-commerce/Kit carabina JAK FEROCITY.png" alt="kit-convertor">
+                    <img src="/e-commerce/producto-cuatro.png" alt="kit-convertor">
                     <p>Kit JAK FEROCITY + FN Five-Seven</p>
                     <div class="colors">
                         <button class="color-button" style="background-color: black;" data-color="black"></button>
                         <button class="color-button" style="background-color: grey;" data-color="gray"></button>
                         <button class="color-button" style="background-color: white;" data-color="white"></button>
-                        <button class="color-button" style="background-color: burlywood;" data-color="lightbrown"></button>
-                        <button class="color-button" style="background-color: darkolivegreen;" data-color="darkolivegreen"></button>
+                        <button class="color-button" style="background-color: burlywood;"
+                            data-color="lightbrown"></button>
+                        <button class="color-button" style="background-color: darkolivegreen;"
+                            data-color="darkolivegreen"></button>
                     </div>
                     <div class="color-options">
                         <label class="color-1">
@@ -132,14 +178,16 @@
                     <button class="buy-button">+</button>
                 </td>
                 <td class="product">
-                    <img src="/imágenes e-commerce/Corvo C-4.png" alt="carabina-C4">
+                    <img src="/e-commerce/producto-cinco.png" alt="carabina-C4">
                     <p>Corvo Car C-4</p>
                     <div class="colors">
                         <button class="color-button" style="background-color: black;" data-color="black"></button>
                         <button class="color-button" style="background-color: grey;" data-color="gray"></button>
                         <button class="color-button" style="background-color: white;" data-color="white"></button>
-                        <button class="color-button" style="background-color: burlywood;" data-color="lightbrown"></button>
-                        <button class="color-button" style="background-color: rgb(108, 136, 153);" data-color="denim"></button>
+                        <button class="color-button" style="background-color: burlywood;"
+                            data-color="lightbrown"></button>
+                        <button class="color-button" style="background-color: rgb(108, 136, 153);"
+                            data-color="denim"></button>
                     </div>
                     <div class="color-options">
                         <label class="color-1">
@@ -163,14 +211,16 @@
             </tr>
             <tr>
                 <td class="product">
-                    <img src="/imágenes e-commerce/TKA Cobra.png" alt="TKA-Cobra">
+                    <img src="/e-commerce/producto-seis.png" alt="TKA-Cobra">
                     <p>TKA Cobra + accesorios</p>
                     <div class="colors">
                         <button class="color-button" style="background-color: black;" data-color="black"></button>
                         <button class="color-button" style="background-color: grey;" data-color="gray"></button>
                         <button class="color-button" style="background-color: white;" data-color="white"></button>
-                        <button class="color-button" style="background-color: burlywood;" data-color="lightbrown"></button>
-                        <button class="color-button" style="background-color: rgb(82, 44, 8);" data-color="darkbrown"></button>
+                        <button class="color-button" style="background-color: burlywood;"
+                            data-color="lightbrown"></button>
+                        <button class="color-button" style="background-color: rgb(82, 44, 8);"
+                            data-color="darkbrown"></button>
                     </div>
                     <div class="color-options">
                         <label class="color-1">
@@ -192,14 +242,16 @@
                     <button class="buy-button">+</button>
                 </td>
                 <td class="product">
-                    <img src="/imágenes e-commerce/SG Compact-5.png" alt="SG-Compact-5">
+                    <img src="/e-commerce/producto-siete.png" alt="SG-Compact-5">
                     <p>SG Compact-5 + accesorios</p>
                     <div class="colors">
                         <button class="color-button" style="background-color: black;" data-color="black"></button>
                         <button class="color-button" style="background-color: grey;" data-color="gray"></button>
                         <button class="color-button" style="background-color: white;" data-color="white"></button>
-                        <button class="color-button" style="background-color: burlywood;" data-color="lightbrown"></button>
-                        <button class="color-button" style="background-color: rgb(82, 44, 8);" data-color="darkbrown"></button>
+                        <button class="color-button" style="background-color: burlywood;"
+                            data-color="lightbrown"></button>
+                        <button class="color-button" style="background-color: rgb(82, 44, 8);"
+                            data-color="darkbrown"></button>
                     </div>
                     <div class="color-options">
                         <label class="color-1">
@@ -221,14 +273,16 @@
                     <button class="buy-button">+</button>
                 </td>
                 <td class="product">
-                    <img src="/imágenes e-commerce/Swordfish.png" alt="swordfish-pentaburst">
+                    <img src="/e-commerce/producto-ocho.png" alt="swordfish-pentaburst">
                     <p>Swordfish</p>
                     <div class="colors">
                         <button class="color-button" style="background-color: black;" data-color="black"></button>
                         <button class="color-button" style="background-color: grey;" data-color="gray"></button>
                         <button class="color-button" style="background-color: white;" data-color="white"></button>
-                        <button class="color-button" style="background-color: rgb(82, 44, 8);" data-color="darkbrown"></button>
-                        <button class="color-button" style="background-color: darkolivegreen;" data-color="darkolivegreen"></button>
+                        <button class="color-button" style="background-color: rgb(82, 44, 8);"
+                            data-color="darkbrown"></button>
+                        <button class="color-button" style="background-color: darkolivegreen;"
+                            data-color="darkolivegreen"></button>
                     </div>
                     <div class="color-options">
                         <label class="color-1">
@@ -250,14 +304,16 @@
                     <button class="buy-button">+</button>
                 </td>
                 <td class="product">
-                    <img src="/imágenes e-commerce/VF 7S.png" alt="rifle-batalla">
+                    <img src="/e-commerce/producto-nueve.png" alt="rifle-batalla">
                     <p>TAQ-VF 7S</p> <!-- Fusión de nombres: TAQ-V + VF 7S -->
                     <div class="colors">
                         <button class="color-button" style="background-color: black;" data-color="black"></button>
                         <button class="color-button" style="background-color: grey;" data-color="gray"></button>
                         <button class="color-button" style="background-color: white;" data-color="white"></button>
-                        <button class="color-button" style="background-color: burlywood;" data-color="lightbrown"></button>
-                        <button class="color-button" style="background-color: darkolivegreen;" data-color="darkolivegreen"></button>
+                        <button class="color-button" style="background-color: burlywood;"
+                            data-color="lightbrown"></button>
+                        <button class="color-button" style="background-color: darkolivegreen;"
+                            data-color="darkolivegreen"></button>
                     </div>
                     <div class="color-options">
                         <label class="color-1">
@@ -279,14 +335,16 @@
                     <button class="buy-button">+</button>
                 </td>
                 <td class="product">
-                    <img src="/imágenes e-commerce/Corvo DS6.png" alt="revolver-SAA">
+                    <img src="/e-commerce/producto-diez.png" alt="revolver-SAA">
                     <p>Corvo DS6 duales</p>
                     <div class="colors">
                         <button class="color-button" style="background-color: black;" data-color="black"></button>
                         <button class="color-button" style="background-color: grey;" data-color="gray"></button>
                         <button class="color-button" style="background-color: white;" data-color="white"></button>
-                        <button class="color-button" style="background-color: rgb(82, 44, 8);" data-color="darkbrown"></button>
-                        <button class="color-button" style="background-color: rgb(26, 14, 68);" data-color="darkpurple"></button>
+                        <button class="color-button" style="background-color: rgb(82, 44, 8);"
+                            data-color="darkbrown"></button>
+                        <button class="color-button" style="background-color: rgb(26, 14, 68);"
+                            data-color="darkpurple"></button>
                     </div>
                     <div class="color-options">
                         <label class="color-1">
@@ -310,13 +368,14 @@
             </tr>
             <tr>
                 <td class="product">
-                    <img src="/imágenes e-commerce/AIM 90.png" alt="rifle-francotirador">
+                    <img src="/e-commerce/producto-once.png" alt="rifle-francotirador">
                     <p>AIM 90</p>
                     <div class="colors">
                         <button class="color-button" style="background-color: black;" data-color="black"></button>
                         <button class="color-button" style="background-color: grey;" data-color="gray"></button>
                         <button class="color-button" style="background-color: white;" data-color="white"></button>
-                        <button class="color-button" style="background-color: rgb(82, 44, 8);" data-color="darkbrown"></button>
+                        <button class="color-button" style="background-color: rgb(82, 44, 8);"
+                            data-color="darkbrown"></button>
                         <button class="color-button" style="background-color: olive;" data-color="olive"></button>
                     </div>
                     <div class="color-options">
@@ -339,14 +398,17 @@
                     <button class="buy-button">+</button>
                 </td>
                 <td class="product">
-                    <img src="/imágenes e-commerce/AK Suvorov SV7.png" alt="rifle-francotirador">
+                    <img src="/e-commerce/producto-doce.png" alt="rifle-francotirador">
                     <p>AK SUVOROV SV7 + accesorios</p>
                     <div class="colors">
                         <button class="color-button" style="background-color: black;" data-color="black"></button>
                         <button class="color-button" style="background-color: grey;" data-color="gray"></button>
-                        <button class="color-button" style="background-color: rgb(255, 166, 0);" data-color="orange"></button>
-                        <button class="color-button" style="background-color: burlywood;" data-color="lightbrown"></button>
-                        <button class="color-button" style="background-color: rgb(82, 44, 8);" data-color="darkbrown"></button>
+                        <button class="color-button" style="background-color: rgb(255, 166, 0);"
+                            data-color="orange"></button>
+                        <button class="color-button" style="background-color: burlywood;"
+                            data-color="lightbrown"></button>
+                        <button class="color-button" style="background-color: rgb(82, 44, 8);"
+                            data-color="darkbrown"></button>
                     </div>
                     <div class="color-options">
                         <label class="color-1">
@@ -368,14 +430,17 @@
                     <button class="buy-button">+</button>
                 </td>
                 <td class="product">
-                    <img src="/imágenes e-commerce/AK-R.png" alt="rifle-asalto">
+                    <img src="/e-commerce/producto-trece.png" alt="rifle-asalto">
                     <p>AK-R + accesorios</p>
                     <div class="colors">
                         <button class="color-button" style="background-color: black;" data-color="black"></button>
                         <button class="color-button" style="background-color: grey;" data-color="gray"></button>
-                        <button class="color-button" style="background-color: rgb(255, 166, 0);" data-color="orange"></button>
-                        <button class="color-button" style="background-color: burlywood;" data-color="lightbrown"></button>
-                        <button class="color-button" style="background-color: rgb(82, 44, 8);" data-color="darkbrown"></button>
+                        <button class="color-button" style="background-color: rgb(255, 166, 0);"
+                            data-color="orange"></button>
+                        <button class="color-button" style="background-color: burlywood;"
+                            data-color="lightbrown"></button>
+                        <button class="color-button" style="background-color: rgb(82, 44, 8);"
+                            data-color="darkbrown"></button>
                     </div>
                     <div class="color-options">
                         <label class="color-1">
@@ -397,14 +462,16 @@
                     <button class="buy-button">+</button>
                 </td>
                 <td class="product">
-                    <img src="/imágenes e-commerce/CG PS12G.png" alt="escopeta">
+                    <img src="/e-commerce/producto-catorce.png" alt="escopeta">
                     <p>CG PS12G</p>
                     <div class="colors">
                         <button class="color-button" style="background-color: black;" data-color="black"></button>
                         <button class="color-button" style="background-color: grey;" data-color="gray"></button>
                         <button class="color-button" style="background-color: white;" data-color="white"></button>
-                        <button class="color-button" style="background-color: burlywood;" data-color="lightbrown"></button>
-                        <button class="color-button" style="background-color: rgb(82, 44, 8);" data-color="darkbrown"></button>
+                        <button class="color-button" style="background-color: burlywood;"
+                            data-color="lightbrown"></button>
+                        <button class="color-button" style="background-color: rgb(82, 44, 8);"
+                            data-color="darkbrown"></button>
                     </div>
                     <div class="color-options">
                         <label class="color-1">
@@ -426,14 +493,16 @@
                     <button class="buy-button">+</button>
                 </td>
                 <td class="product">
-                    <img src="/imágenes e-commerce/Ferino SP-14.png" alt="escopeta">
+                    <img src="/e-commerce/producto-quince.png" alt="escopeta">
                     <p>Ferino SP-14</p>
                     <div class="colors">
                         <button class="color-button" style="background-color: black;" data-color="black"></button>
                         <button class="color-button" style="background-color: grey;" data-color="gray"></button>
                         <button class="color-button" style="background-color: white;" data-color="white"></button>
-                        <button class="color-button" style="background-color: rgb(82, 44, 8);" data-color="darkbrown"></button>
-                        <button class="color-button" style="background-color: rgb(108, 136, 153);" data-color="denim"></button>
+                        <button class="color-button" style="background-color: rgb(82, 44, 8);"
+                            data-color="darkbrown"></button>
+                        <button class="color-button" style="background-color: rgb(108, 136, 153);"
+                            data-color="denim"></button>
                     </div>
                     <div class="color-options">
                         <label class="color-1">
@@ -457,13 +526,15 @@
             </tr>
             <tr>
                 <td class="product">
-                    <img src="/imágenes e-commerce/HJKE-11 Yukimura.png" alt="pistola-inteligente">
+                    <img src="/e-commerce/producto-dieciseis.png" alt="pistola-inteligente">
                     <p>HJKE-11 Yukimura "Skippy"</p>
                     <div class="colors">
                         <button class="color-button" style="background-color: gold;" data-color="gold"></button>
                         <button class="color-button" style="background-color: grey;" data-color="gray"></button>
-                        <button class="color-button" style="background-color: rgb(14, 165, 0);" data-color="green"></button>
-                        <button class="color-button" style="background-color: rgb(76, 8, 82);" data-color="darkpurple"></button>
+                        <button class="color-button" style="background-color: rgb(14, 165, 0);"
+                            data-color="green"></button>
+                        <button class="color-button" style="background-color: rgb(76, 8, 82);"
+                            data-color="darkpurple"></button>
                         <button class="color-button" style="background-color: white;" data-color="white"></button>
                     </div>
                     <div class="color-options">
@@ -486,14 +557,16 @@
                     <button class="buy-button">+</button>
                 </td>
                 <td class="product">
-                    <img src="/imágenes e-commerce/Carnage.png" alt="escopeta">
+                    <img src="/e-commerce/producto-diecisiete.png" alt="escopeta">
                     <p>Carnage</p>
                     <div class="colors">
                         <button class="color-button" style="background-color: black;" data-color="black"></button>
                         <button class="color-button" style="background-color: yellow;" data-color="yellow"></button>
                         <button class="color-button" style="background-color: red;" data-color="red"></button>
-                        <button class="color-button" style="background-color: burlywood;" data-color="lightbrown"></button>
-                        <button class="color-button" style="background-color: rgb(14, 165, 0);" data-color="green"></button>
+                        <button class="color-button" style="background-color: burlywood;"
+                            data-color="lightbrown"></button>
+                        <button class="color-button" style="background-color: rgb(14, 165, 0);"
+                            data-color="green"></button>
                     </div>
                     <div class="color-options">
                         <label class="color-1">
@@ -515,14 +588,16 @@
                     <button class="buy-button">+</button>
                 </td>
                 <td class="product">
-                    <img src="/imágenes e-commerce/CNIC CN ST-23.png" alt="escopeta">
+                    <img src="/e-commerce/producto-dieciocho.png" alt="escopeta">
                     <p>CN/ST-23</p>
                     <div class="colors">
                         <button class="color-button" style="background-color: black;" data-color="black"></button>
                         <button class="color-button" style="background-color: grey;" data-color="gray"></button>
                         <button class="color-button" style="background-color: white;" data-color="white"></button>
-                        <button class="color-button" style="background-color: burlywood;" data-color="lightbrown"></button>
-                        <button class="color-button" style="background-color: rgb(82, 44, 8);" data-color="darkbrown"></button>
+                        <button class="color-button" style="background-color: burlywood;"
+                            data-color="lightbrown"></button>
+                        <button class="color-button" style="background-color: rgb(82, 44, 8);"
+                            data-color="darkbrown"></button>
                     </div>
                     <div class="color-options">
                         <label class="color-1">
@@ -544,13 +619,15 @@
                     <button class="buy-button">+</button>
                 </td>
                 <td class="product">
-                    <img src="/imágenes e-commerce/Eaton Model 8.png" alt="rifle-francotirador">
+                    <img src="/e-commerce/producto-diecinueve.png" alt="rifle-francotirador">
                     <p>Eaton Model 8</p>
                     <div class="colors">
                         <button class="color-button" style="background-color: black;" data-color="black"></button>
                         <button class="color-button" style="background-color: grey;" data-color="gray"></button>
-                        <button class="color-button" style="background-color: rgb(108, 136, 153);" data-color="denim"></button>
-                        <button class="color-button" style="background-color: burlywood;" data-color="lightbrown"></button>
+                        <button class="color-button" style="background-color: rgb(108, 136, 153);"
+                            data-color="denim"></button>
+                        <button class="color-button" style="background-color: burlywood;"
+                            data-color="lightbrown"></button>
                         <button class="color-button" style="background-color: olive;" data-color="olive"></button>
                     </div>
                     <div class="color-options">
@@ -573,14 +650,16 @@
                     <button class="buy-button">+</button>
                 </td>
                 <td class="product">
-                    <img src="/imágenes e-commerce/SA M308.png" alt="fusil-tirador">
+                    <img src="/e-commerce/producto-veinte.png" alt="fusil-tirador">
                     <p>SA M308</p>
                     <div class="colors">
                         <button class="color-button" style="background-color: black;" data-color="black"></button>
                         <button class="color-button" style="background-color: grey;" data-color="gray"></button>
                         <button class="color-button" style="background-color: white;" data-color="white"></button>
-                        <button class="color-button" style="background-color: rgb(82, 44, 8);" data-color="darkbrown"></button>
-                        <button class="color-button" style="background-color: rgb(108, 136, 153);" data-color="denim"></button>
+                        <button class="color-button" style="background-color: rgb(82, 44, 8);"
+                            data-color="darkbrown"></button>
+                        <button class="color-button" style="background-color: rgb(108, 136, 153);"
+                            data-color="denim"></button>
                     </div>
                     <div class="color-options">
                         <label class="color-1">
@@ -604,14 +683,17 @@
             </tr>
             <tr>
                 <td class="product">
-                    <img src="/imágenes e-commerce/AK-102.png" alt="rifle-asalto">
+                    <img src="/e-commerce/producto-veintiuno.png" alt="rifle-asalto">
                     <p>AK-102</p>
                     <div class="colors">
                         <button class="color-button" style="background-color: black;" data-color="black"></button>
-                        <button class="color-button" style="background-color: rgb(108, 136, 153);" data-color="denim"></button>
+                        <button class="color-button" style="background-color: rgb(108, 136, 153);"
+                            data-color="denim"></button>
                         <button class="color-button" style="background-color: olive;" data-color="olive"></button>
-                        <button class="color-button" style="background-color: burlywood;" data-color="lightbrown"></button>
-                        <button class="color-button" style="background-color: mediumpurple;" data-color="mediumpurple"></button>
+                        <button class="color-button" style="background-color: burlywood;"
+                            data-color="lightbrown"></button>
+                        <button class="color-button" style="background-color: mediumpurple;"
+                            data-color="mediumpurple"></button>
                     </div>
                     <div class="color-options">
                         <label class="color-1">
@@ -633,14 +715,15 @@
                     <button class="buy-button">+</button>
                 </td>
                 <td class="product">
-                    <img src="/imágenes e-commerce/IWI Tavor x95.png" alt="rifle-asalto">
+                    <img src="/e-commerce/producto-veintidos.png" alt="rifle-asalto">
                     <p>Tavor x95</p>
                     <div class="colors">
                         <button class="color-button" style="background-color: black;" data-color="black"></button>
                         <button class="color-button" style="background-color: grey;" data-color="gray"></button>
                         <button class="color-button" style="background-color: white;" data-color="white"></button>
                         <button class="color-button" style="background-color: olive;" data-color="olive"></button>
-                        <button class="color-button" style="background-color: rgb(108, 136, 153);" data-color="denim"></button>
+                        <button class="color-button" style="background-color: rgb(108, 136, 153);"
+                            data-color="denim"></button>
                     </div>
                     <div class="color-options">
                         <label class="color-1">
@@ -662,14 +745,15 @@
                     <button class="buy-button">+</button>
                 </td>
                 <td class="product">
-                    <img src="/imágenes e-commerce/Lockwood 680.png" alt="escopeta">
+                    <img src="/e-commerce/producto-veintitres.png" alt="escopeta">
                     <p>Lockwood 680</p>
                     <div class="colors">
                         <button class="color-button" style="background-color: black;" data-color="black"></button>
                         <button class="color-button" style="background-color: grey;" data-color="gray"></button>
                         <button class="color-button" style="background-color: white;" data-color="white"></button>
                         <button class="color-button" style="background-color: olive;" data-color="olive"></button>
-                        <button class="color-button" style="background-color: rgb(108, 136, 153);" data-color="denim"></button>
+                        <button class="color-button" style="background-color: rgb(108, 136, 153);"
+                            data-color="denim"></button>
                     </div>
                     <div class="color-options">
                         <label class="color-1">
@@ -691,14 +775,16 @@
                     <button class="buy-button">+</button>
                 </td>
                 <td class="product">
-                    <img src="/imágenes e-commerce/M21.png" alt="rifle-francotirador">
+                    <img src="/e-commerce/producto-veinticuatro.png" alt="rifle-francotirador">
                     <p>M21 camuflado</p>
                     <div class="colors">
                         <button class="color-button" style="background-color: black;" data-color="black"></button>
                         <button class="color-button" style="background-color: grey;" data-color="gray"></button>
                         <button class="color-button" style="background-color: white;" data-color="white"></button>
-                        <button class="color-button" style="background-color: burlywood;" data-color="lightbrown"></button>
-                        <button class="color-button" style="background-color: darkolivegreen;" data-color="darkolivegreen"></button>
+                        <button class="color-button" style="background-color: burlywood;"
+                            data-color="lightbrown"></button>
+                        <button class="color-button" style="background-color: darkolivegreen;"
+                            data-color="darkolivegreen"></button>
                     </div>
                     <div class="color-options">
                         <label class="color-1">
@@ -720,12 +806,14 @@
                     <button class="buy-button">+</button>
                 </td>
                 <td class="product">
-                    <img src="/imágenes e-commerce/M2038 Tactician.png" alt="escopeta">
+                    <img src="/e-commerce/producto-veinticinco.png" alt="escopeta">
                     <p>M2038 táctica</p>
                     <div class="colors">
                         <button class="color-button" style="background-color: black;" data-color="white"></button>
-                        <button class="color-button" style="background-color: rgb(82, 44, 8);" data-color="darkbrown"></button>
-                        <button class="color-button" style="background-color: rgb(108, 136, 153);" data-color="denim"></button>
+                        <button class="color-button" style="background-color: rgb(82, 44, 8);"
+                            data-color="darkbrown"></button>
+                        <button class="color-button" style="background-color: rgb(108, 136, 153);"
+                            data-color="denim"></button>
                         <button class="color-button" style="background-color: olive;" data-color="olive"></button>
                         <button class="color-button" style="background-color: gold;" data-color="gold"></button>
                     </div>
@@ -752,27 +840,7 @@
         </table>
     </main>
     <div style="text-align: center;">
-        <img class="grupo-de-cuatro" src="/imágenes e-commerce/OTWD - Artwork.jpg" alt="aliados">
-    </div>
-    <div class="button-container">
-        <p style="text-align: center; font-size: 25px;">¡Luchá en solitario o con aliados y... no mueras!</p>
-        <br>
-        <input type="text" id="nombre" placeholder="Nombre">
-        <input type="text" id="apellido" placeholder="Apellido">
-        <input type="number" id="edad" placeholder="Edad">
-        <button onclick="ingresoDeSolicitud()">Ingresar</button>
-        <div style="background-color: white;" id="datos-guardados"></div> <!-- ARREGLAR -->
-        <div style="background-color: white;" id="productos"></div> <!-- ARREGLAR -->
-        <div style="background-color: white;" id="colores"></div> <!-- ARREGLAR -->
-        <div style="background-color: white;" id="mensaje-compra"></div> <!-- ARREGLAR -->
-        <div style="background-color: white;" id="total-carrito"></div> <!-- ARREGLAR -->
-        <div style="background-color: white;" id="total-compra"></div> <!-- ARREGLAR -->
-        <div style="background-color: white;" id="contacto"></div> <!-- ARREGLAR -->
-        <button style="font-size: 100%; background-color: black;" id="show-cart">🛒</button>
-        <button style="font-size: 100%; background-color: black;" id="clear-cart">Vaciar</button> <!-- ARREGLAR -->
-        <div class="cart-items"></div>
-        <br>
-        <br>
+        <img class="grupo-de-cuatro" src="/e-commerce/artwork.jpg" alt="aliados">
     </div>
     <footer style="background-color: blanchedalmond; text-align: center">
         <h6>
@@ -781,6 +849,7 @@
             <address> Realizado por: Lucas Leonel Montenegro Burgos </address>
         </h6>
     </footer>
-    <script async src="./interactive.js"></script> <!-- <script defer src="./main.js"></script> también se puede aplicar este atributo -->
+    <script async src="/interactive.js"></script>
+    <!-- <script defer src="./interactive.js"></script> también se puede aplicar este atributo -->
 </body>
 </html>
