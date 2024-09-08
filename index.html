@@ -12,15 +12,33 @@
         <h1 class="header-title">Irbis Supplies</h1>
     </header>
     <p style="font-size: 20px; background-color: rgba(0, 0, 0, 0.780); font-weight: bold; text-align: center; color: rgb(255, 255, 0)"> ¡El último bastión del comercio virtual! Aunque el mundo se desmorona y los muertos caminan, nuestra red eléctrica sigue en pie y el sitio está operativo para abastecerte con lo necesario para todas tus exigencias, ofreciéndote productos en éstos tiempos de incertidumbre y oscuridad.</p>
+    <div class="button-container">
+        <p style="text-align: center; font-size: 25px;">¡Luchá en solitario o con aliados y... no mueras!</p>
+        <div style="text-align: center;">
+            <img class="grupo-de-cuatro" src="/e-commerce/artwork.jpg" alt="aliados">
+        </div>    
+        <input type="text" id="nombre" placeholder="Nombre">
+        <input type="text" id="apellido" placeholder="Apellido">
+        <input type="number" id="edad" placeholder="Edad">
+        <button onclick="IngresoDeSolicitud()">Ingresar</button>
+        <button style="font-size: 100%; background-color: black;" id="show-cart">🛒 Mostrar Carrito</button>
+        <button id="vaciar-carrito" style="font-size: 100%; background-color: black;">Vaciar Carrito</button>
+        <button id="finalizar-compra" style="font-size: 100%; background-color: green;">Finalizar Compra</button>
+        <!-- Mensajes y datos de la compra -->
+        <div id="mensaje-compra"></div>
+        <div id="total-carrito"></div>
+        <div id="total-compra"></div>
+        <div id="contacto"></div>
+    </div>
     <div id="productos"></div>
-    <div id ='carrito'></div>
+    <div id="carrito"></div>
     <main>
         <!-- Modal de bienvenida -->
         <div id="welcome-modal" class="hidden">
             <h2>¡Bienvenido/a!</h2>
             <button onclick="document.getElementById('welcome-modal').style.display = 'none'">Cerrar</button>
         </div>
-        <!-- Formulario para la compra de productos -->
+        <!-- Formulario para comprar productos -->
         <div id="compra-form" class="hidden">
             <h2>Compra de Productos</h2>
             <form>
@@ -35,30 +53,10 @@
                 <br>
                 <button type="submit">Confirmar Compra</button>
             </form>
-        </div>
-        <div class="button-container">
-            <p style="text-align: center; font-size: 25px;">¡Luchá en solitario o con aliados y... no mueras!</p>
-            <input type="text" id="nombre" placeholder="Nombre">
-            <input type="text" id="apellido" placeholder="Apellido">
-            <input type="number" id="edad" placeholder="Edad">
-            <button onclick="IngresoDeSolicitud()">Ingresar</button>
-            <button style="font-size: 100%; background-color: black;" id="show-cart">🛒</button>
-            <button id ="vaciar-carrito" style="font-size: 100%; background-color: black;" id="clear-cart">Vaciar</button>
-            <div style="background-color: white;" id="datos-guardados"></div>
-            <div style="background-color: white;" id="productos"></div>
-            <div style="background-color: white;" id="colores"></div>
-            <div style="background-color: white;" id="mensaje-compra"></div>
-            <div style="background-color: white;" id="total-carrito"></div>
-            <div style="background-color: white;" id="total-compra"></div>
-            <div style="background-color: white;" id="contacto"></div>
-            <div class="cart-items"></div>
-        </div>
+        </div>        
         <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
         <script async src="/interactive.js"></script>             
-    </main>
-    <div style="text-align: center;">
-        <img class="grupo-de-cuatro" src="/e-commerce/artwork.jpg" alt="aliados">
-    </div>
+    </main>    
     <footer style="background-color: blanchedalmond; text-align: center">
         <h6>
             &copy; 2024 - Todos los derechos reservados.

@@ -1,4 +1,4 @@
-/* Estilos básicos para el HTML y la tabla - ¿Debería aplicar Media Query? */
+/* Estilos básicos */
 body {
   font-family: 'Times New Roman', Times, serif;
   margin: 0;
@@ -9,105 +9,103 @@ body {
 }
 
 header {
-  display: flex; /* Usa flexbox para alinear el logo y el título */
-  flex-direction: column; /* Coloca el logo y el título en una columna */
-  align-items: center; /* Centra los elementos horizontalmente */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   color: #fff;
   padding: 1rem;
-  position: relative; /* Permite posicionar el carrito en relación al header */
+  position: relative;
 }
 
-/* Logo */
 .logo {
-  width: 200px; /* Ajusta el tamaño del logo */
-  height: auto; /* Mantiene la proporción del logo */
-  margin-top: 10px; /* Espacio entre el logo y el título */
+  width: 200px;
+  height: auto;
+  margin-top: 10px;
 }
 
 .header-title {
-  font-size: 50px; /* Tamaño del título */
-  color: rgb(255, 145, 0); /* Color del título */
-  text-align: center; /* Centra el texto */
+  font-size: 50px;
+  color: rgb(255, 145, 0);
+  text-align: center;
 }
 
 /* Estilos para el modal */
 #welcome-modal {
-  display: none; /* Se ocultará por defecto */
-  position: fixed; /* Fijo en la pantalla */
-  left: 50%; /* Centrar horizontalmente */
-  top: 50%; /* Centrar verticalmente */
-  transform: translate(-50%, -50%); /* Ajustar al centro exacto */
-  background-color: white; /* Fondo blanco */
-  border: 1px solid #ccc; /* Borde gris claro */
-  padding: 20px; /* Espaciado interno */
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); /* Sombra ligera */
-  z-index: 1000; /* Asegurarse de que esté sobre otros elementos */
+  display: none;
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  border: 1px solid #ccc;
+  padding: 20px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
 }
 
-/* Estilo para el overlay de fondo, si deseas agregarlo */
 #welcome-modal::before {
-  content: ''; /* Necesario para crear el overlay */
-  position: fixed; /* Fijo en la pantalla */
+  content: '';
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.5); /* Fondo oscuro con opacidad */
-  z-index: -1; /* Detrás del modal */
+  background: rgba(0, 0, 0, 0.5);
+  z-index: -1;
 }
 
 /* Estilo para el formulario de compra */
 #compra-form {
-  background-color: white; /* Fondo blanco */
-  border: 1px solid #ccc; /* Borde gris claro */
-  padding: 20px; /* Espaciado interno */
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); /* Sombra ligera */
-  width: 90%; /* Ancho del formulario */
-  max-width: 500px; /* Ancho máximo del formulario */
-  margin: 20px auto; /* Espacio en la parte superior e inferior, centrado horizontalmente */
+  background-color: white;
+  border: 1px solid #ccc;
+  padding: 20px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  width: 90%;
+  max-width: 500px;
+  margin: 20px auto;
 }
 
-/* Estilos adicionales para los elementos dentro del formulario */
 #compra-form h2 {
-  margin-top: 0; /* Eliminar margen superior del encabezado */
+  margin-top: 0;
 }
 
 #compra-form form {
   display: flex;
-  flex-direction: column; /* Organiza los elementos verticalmente */
+  flex-direction: column;
 }
 
 #compra-form label {
-  margin-bottom: 5px; /* Espacio debajo de cada etiqueta */
-  font-weight: bold; /* Resaltar las etiquetas */
+  margin-bottom: 5px;
+  font-weight: bold;
 }
 
 #compra-form input {
-  margin-bottom: 10px; /* Espacio debajo de cada campo de entrada */
-  padding: 8px; /* Espaciado interno */
-  border: 1px solid #ccc; /* Borde gris claro */
-  border-radius: 4px; /* Bordes redondeados */
+  margin-bottom: 10px;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
 }
 
 #compra-form button {
-  padding: 10px 15px; /* Espaciado interno */
-  border: none; /* Sin borde */
-  border-radius: 4px; /* Bordes redondeados */
-  background-color: #007BFF; /* Color de fondo azul */
-  color: white; /* Color del texto blanco */
-  font-size: 16px; /* Tamaño de fuente */
-  cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
-  transition: background-color 0.3s; /* Efecto de transición para el cambio de color */
+  padding: 10px 15px;
+  border: none;
+  border-radius: 4px;
+  background-color: #007BFF;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s;
 }
 
 #compra-form button:hover {
-  background-color: #0056b3; /* Color de fondo cuando se pasa el cursor sobre el botón */
+  background-color: #0056b3;
 }
 
 .hidden {
   display: none;
 }
 
+/* Productos */
 #productos {
   display: flex;
   flex-wrap: wrap;
@@ -115,23 +113,20 @@ header {
   justify-content: space-between;
   margin: auto;
   width: 80%;
-  height: auto;
 }
 
-.contenedorDeCard{
-  border-radius: 50px;
+.contenedorDeCard {
   overflow: hidden;
   width: 250px;
-  height: 360px;
-  padding: 0;
-  margin: 30px auto;
-  flex-direction: column;
-  border: 5px solid black;
+  height: 480px;
+  margin: 10px 10px;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
 }
-.tituloCard{
+
+.tituloCard {
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
   color: rgb(255, 183, 0);
   text-align: center;
@@ -141,23 +136,16 @@ header {
   border-top: 3px solid rgb(255, 183, 0);
   border-bottom: 3px solid rgb(255, 183, 0);
 }
+
 .contenedorDeCard img {
-  padding-top: 10px;
-  padding-bottom: 10px;
-  border-radius: 30px;
   width: 250px;
   height: 250px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border: 2px solid black;
 }
 
-.boton{
+.boton {
   width: auto;
   height: auto;
   display: flex;
-  flex-direction: row;
   justify-content: center;
   align-items: center;
   color: rgb(250, 179, 0);
@@ -165,7 +153,7 @@ header {
   border: 3px solid rgb(255, 183, 0);
 }
 
-/* Estilo para el carrito de compras */
+/* Carrito de compras */
 #cart {
   position: fixed;
   top: 0;
@@ -177,23 +165,28 @@ header {
   box-shadow: -2px 0 5px rgba(0,0,0,0.5);
   padding: 10px;
   overflow-y: auto;
-  display: none; /* Ocultar por defecto */
+  display: none;
 }
+
 #cart h2 {
   margin-top: 0;
 }
+
 #cart .item {
   margin-bottom: 10px;
 }
+
 #cart .item img {
   max-width: 50px;
   vertical-align: middle;
   margin-right: 10px;
 }
+
 #cart .item p {
   display: inline-block;
   vertical-align: middle;
 }
+
 #cart .item button {
   background: red;
   color: white;
@@ -206,32 +199,17 @@ main {
   padding: 2rem;
 }
 
-table {
-  width: 100%;
-  border-collapse: none;
-}
-
-td {
-  padding: 1rem;
-  border: 1px solid #ddd;
-  text-align: center;
-}
-
 img {
-  width: 250px; /* Establecer un tamaño fijo para las imágenes */
-  height: auto; /* Mantiene la proporción */
-}
-
-.grupo-de-cuatro {
-  width: auto;
+  width: 250px;
   height: auto;
 }
 
+/* Productos en la tabla */
 .product {
   background-color: #ffffff8c;
   border-radius: 78px;
   overflow: hidden;
-  text-align: center; /* Alinea el texto en el centro */
+  text-align: center;
 }
 
 .product p {
@@ -243,15 +221,14 @@ img {
   text-transform: uppercase;
 }
 
-/* Animación para las imágenes de los productos */
 .product img {
   width: 278px;
   height: auto;
-  transition: transform 0.1s ease; /* Transición suave para la animación */
+  transition: transform 0.1s ease;
 }
 
 .product:hover img {
-  transform: scale(1.1); /* Escala la imagen al 110% al pasar el mouse */
+  transform: scale(1.1);
 }
 
 /* Botón selector de colores */
@@ -259,15 +236,6 @@ img {
   display: flex;
   justify-content: center;
   margin: 0.5rem 0;
-}
-
-.color {
-  width: 20px;
-  height: 20px;
-  border-radius: 50%;
-  margin: 0 5px;
-  display: inline-block;
-  cursor: pointer;
 }
 
 .color-button {
@@ -301,7 +269,7 @@ img {
   cursor: pointer;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
   transition: background-color 0.3s;
-  margin-top: 10px; /* Espacio entre el texto del producto y el botón */
+  margin-top: 10px;
 }
 
 .buy-button:hover {
@@ -316,7 +284,7 @@ img {
 
 .button-container button {
   padding: 15px 30px;
-  font-size: 100%; /* Tamaño del texto del botón */
+  font-size: 100%;
   background-color: #0004ff;
   color: #fff;
   border: black;
@@ -336,6 +304,7 @@ img {
   margin: 1rem 0;
 }
 
+/* Modal catálogo */
 #catalogo {
   display: none;
   position: fixed;
@@ -361,4 +330,35 @@ img {
   float: right;
   cursor: pointer;
   font-size: 18px;
+}
+
+/* Media Queries para adaptabilidad */
+@media (max-width: 768px) {
+  .header-title {
+    font-size: 36px;
+  }
+  
+  #productos {
+    width: 100%;
+  }
+  
+  .contenedorDeCard {
+    width: 100%;
+    height: auto;
+    margin: 15px 0;
+  }
+  
+  .logo {
+    width: 150px;
+  }
+  
+  .buy-button {
+    padding: 8px 16px;
+    font-size: 14px;
+  }
+  
+  .button-container button {
+    padding: 12px 24px;
+    font-size: 90%;
+  }
 }
