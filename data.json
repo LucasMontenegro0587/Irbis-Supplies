@@ -1,19 +1,21 @@
+[
   {
     "id": 1,
     "nombre": "Broughton M2000-D",
-    "imagen": "/e-commerce/producto-uno.png",
+    "imagen": "./e-commerce/producto-uno.png",
     "colores": [
       "black",
       "gray",
       "white",
       "lightbrown",
       "mediumpurple"
-      ]
-  }
+    ]
+  },
   {
     "id": 2,
     "nombre": "Pistola Glock 25 Radetec Slide c/ visor digital - 10 rondas",
     "precio": 600,
+    "imagen": "./e-commerce/producto-dos.png",
     "colores": [
       "Negro",
       "Agrisado",
@@ -26,6 +28,7 @@
     "id": 3,
     "nombre": "Subfusil FN P90 - 50 rondas",
     "precio": 2000,
+    "imagen": "./e-commerce/producto-tres.png",
     "colores": [
       "Negro",
       "Agrisado",
@@ -38,6 +41,7 @@
     "id": 4,
     "nombre": "Kit convertor + FN Five-Seven - 20 rondas",
     "precio": 3000,
+    "imagen": "./e-commerce/producto-cuatro.png",
     "colores": [
       "Negro",
       "Agrisado",
@@ -50,6 +54,7 @@
     "id": 5,
     "nombre": "Carabina Corvo CAR-4 - 20 rondas",
     "precio": 2200,
+    "imagen": "./e-commerce/producto-cinco.png",
     "colores": [
       "Negro",
       "Agrisado",
@@ -62,6 +67,7 @@
     "id": 6,
     "nombre": "Subsubil TKA Cobra - 20 rondas",
     "precio": 2200,
+    "imagen": "./e-commerce/producto-seis.png",
     "colores": [
       "Negro",
       "Agrisado",
@@ -74,6 +80,7 @@
     "id": 7,
     "nombre": "Subfusil SG Compact-5 - 20 rondas",
     "precio": 2300,
+    "imagen": "./e-commerce/producto-siete.png",
     "colores": [
       "Negro",
       "Agrisado",
@@ -86,6 +93,7 @@
     "id": 8,
     "nombre": "Rifle táctico Swordfish pentaburst - 50 rondas",
     "precio": 1700,
+    "imagen": "./e-commerce/producto-ocho.png",
     "colores": [
       "Negro",
       "Agrisado",
@@ -98,6 +106,7 @@
     "id": 9,
     "nombre": "Rifle de asalto TAQ-VF 7S - 30 rondas",
     "precio": 1600,
+    "imagen": "./e-commerce/producto-nueve.png",
     "colores": [
       "Negro",
       "Agrisado",
@@ -110,6 +119,7 @@
     "id": 10,
     "nombre": "Revolver de acción simple Corvo DS6 duales - 5 rondas",
     "precio": 800,
+    "imagen": "./e-commerce/producto-diez.png",
     "colores": [
       "Negro",
       "Agrisado",
@@ -122,6 +132,7 @@
     "id": 11,
     "nombre": "Rifle de francotirador AIM 90 - 10 rondas",
     "precio": 3200,
+    "imagen": "./e-commerce/producto-once.png",
     "colores": [
       "Negro",
       "Agrisado",
@@ -134,6 +145,7 @@
     "id": 12,
     "nombre": "Fusil de asalto AK Surorov SV7 - 10 rondas",
     "precio": 1400,
+    "imagen": "./e-commerce/producto-doce.png",
     "colores": [
       "Negro",
       "Agrisado",
@@ -146,6 +158,7 @@
     "id": 13,
     "nombre": "Rifle de francotirador AK-R - 30 rondas",
     "precio": 3000,
+    "imagen": "./e-commerce/producto-trece.png",
     "colores": [
       "Negro",
       "Agrisado",
@@ -158,6 +171,7 @@
     "id": 14,
     "nombre": "Escopeta CG PS12G - 5 rondas",
     "precio": 1800,
+    "imagen": "./e-commerce/producto-catorce.png",
     "colores": [
       "Negro",
       "Agrisado",
@@ -170,6 +184,7 @@
     "id": 15,
     "nombre": "Escopeta Ferino SP-14 - 10 rondas",
     "precio": 2200,
+    "imagen": "./e-commerce/producto-quince.png",
     "colores": [
       "Negro",
       "Agrisado",
@@ -182,6 +197,7 @@
     "id": 16,
     "nombre": "Pistola HJKE-11 Yukimura - variante Skippy - 30 rondas",
     "precio": 4200,
+    "imagen": "./e-commerce/producto-dieciseis.png",
     "colores": [
       "Dorado",
       "Agrisado",
@@ -194,6 +210,7 @@
     "id": 17,
     "nombre": "Escopeta Carnage - 10 rondas",
     "precio": 6000,
+    "imagen": "./e-commerce/producto-diecisiete.png",
     "colores": [
       "Negro",
       "Amarillo",
@@ -206,6 +223,7 @@
     "id": 18,
     "nombre": "Escopeta CN/ST-23 - 20 rondas",
     "precio": 4200,
+    "imagen": "./e-commerce/producto-dieciocho.png",
     "colores": [
       "Negro",
       "Agrisado",
@@ -218,6 +236,7 @@
     "id": 19,
     "nombre": "Rifle de francotirador Eaton modelo 8 - 10 rondas",
     "precio": 3000,
+    "imagen": "./e-commerce/producto-diecinueve.png",
     "colores": [
       "Negro",
       "Agrisado",
@@ -230,6 +249,7 @@
     "id": 20,
     "nombre": "Fusil de tirador SA M308 - 10 rondas",
     "precio": 1600,
+    "imagen": "./e-commerce/producto-veinte.png",
     "colores": [
       "Negro",
       "Agrisado",
@@ -242,6 +262,7 @@
     "id": 21,
     "nombre": "Rifle de asalto AK-102 - 30 rondas",
     "precio": 1400,
+    "imagen": "./e-commerce/producto-veintiuno.png",
     "colores": [
       "Negro",
       "Greige",
@@ -254,6 +275,7 @@
     "id": 22,
     "nombre": "Rifle de asalto bullup Tavor x95 - 30 rondas",
     "precio": 1600,
+    "imagen": "./e-commerce/producto-veintidos.png",
     "colores": [
       "Negro",
       "Agrisado",
@@ -266,6 +288,7 @@
     "id": 23,
     "nombre": "Escopeta Lockwood 680 - 7 rondas",
     "precio": 1800,
+    "imagen": "./e-commerce/producto-veintitres.png",
     "colores": [
       "Negro",
       "Agrisado",
@@ -278,6 +301,7 @@
     "id": 24,
     "nombre": "Rifle de francotirador M21 camuflado - 10 rondas",
     "precio": 3500,
+    "imagen": "./e-commerce/producto-veinticuatro.png",
     "colores": [
       "Negro",
       "Agrisado",
@@ -290,6 +314,7 @@
     "id": 25,
     "nombre": "Escopeta M2038 táctica - 10 rondas",
     "precio": 7000,
+    "imagen": "./e-commerce/producto-veinticinco.png",
     "colores": [
       "Negro",
       "Marrón",
@@ -298,3 +323,4 @@
       "Dorado"
     ]
   }
+]
