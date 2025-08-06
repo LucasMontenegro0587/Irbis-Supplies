@@ -3,7 +3,7 @@ body {
   font-family: 'Times New Roman', Times, serif;
   margin: 0;
   padding: 0;
-  background-image: url('/e-commerce/background-tunnel.jpg');
+  background-image: url('./e-commerce/background-tunnel.jpg');
   background-size: cover;
   background-attachment: fixed;
 }
